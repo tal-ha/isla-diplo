@@ -1,0 +1,41 @@
+{
+  "name": "isladiplo",
+  "description": "None",
+  "version": "1.1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "icons/pencil.png"
+  },
+  "action": {
+    "default_title": "isladiplo",
+    "default_icon": {
+      "48": "icons/pencil.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "core/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://service2.diplo.de/rktermin/extern/appointment_showForm.do*",
+        "<all_urls>"
+      ],
+      "js": [
+        "libs/jquery-3.6.3.min.js",
+        "core/contentscript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "data.json" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
