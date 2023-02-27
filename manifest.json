@@ -23,8 +23,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://service2.diplo.de/rktermin/extern/appointment_showForm.do*",
-        "<all_urls>"
+        "https://service2.diplo.de/rktermin/extern/appointment_showForm.do*"
       ],
       "js": [
         "libs/jquery-3.6.3.min.js",
