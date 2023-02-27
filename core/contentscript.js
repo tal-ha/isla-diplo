@@ -2,10 +2,10 @@
  * Document ready event
  */
 $(function () {
-	fetch(chrome.runtime.getURL('../data.json'))
-	.then((response) => response.json())
-    .then((json) => injectFormData(json))
-	.then(() => focusCaptchaField());
+    fetch(chrome.runtime.getURL('../data.json'))
+        .then((response) => response.json())
+        .then((json) => injectFormData(json))
+        .then(() => focusCaptchaField());
 });
 
 /**
@@ -13,33 +13,33 @@ $(function () {
  */
 function injectFormData(data) {
 
-	// Last Name:
-	$("input#appointment_newAppointmentForm_lastname").val(data.last_name);
-	
-	// First Name:
-	$("input#appointment_newAppointmentForm_firstname").val(data.first_name);
-	
-	// Email:
-	$("input#appointment_newAppointmentForm_email").val(data.email);
+    // Last Name:
+    $("input#appointment_newAppointmentForm_lastname").val(data.last_name);
 
-	// Repeat Email:
-	$("input#appointment_newAppointmentForm_emailrepeat").val(data.email);
+    // First Name:
+    $("input#appointment_newAppointmentForm_firstname").val(data.first_name);
 
-	// Passport number:
-	$("input#appointment_newAppointmentForm_fields_0__content").val(data.passport_number);
+    // Email:
+    $("input#appointment_newAppointmentForm_email").val(data.email);
 
-	// Citizenship:
-	$("select#appointment_newAppointmentForm_fields_1__content").val(data.citizenship);
+    // Repeat Email:
+    $("input#appointment_newAppointmentForm_emailrepeat").val(data.email);
 
-	// Date of collection of fingerprints:
-	$("input#fields2content").val(data.fingerprint_collection_date);
+    // Passport number:
+    $("input#appointment_newAppointmentForm_fields_0__content").val(data.passport_number);
+
+    // Citizenship:
+    $("select#appointment_newAppointmentForm_fields_1__content").val(data.citizenship);
+
+    // Date of collection of fingerprints:
+    $("input#fields2content").val(data.fingerprint_collection_date);
 }
 
 /**
  * Focuses the captcha field
  */
-function focusCaptchaField(){
-	
-	// Captcha:
-	$("input#appointment_newAppointmentForm_captchaText").focus();
+function focusCaptchaField() {
+
+    // Captcha:
+    $("input#appointment_newAppointmentForm_captchaText").focus();
 }
