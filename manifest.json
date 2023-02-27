@@ -1,13 +1,13 @@
 {
-  "name": "isladiplo",
-  "description": "None",
+  "name": "Isla Diplo",
+  "description": "If you don't know what it is, you don't need it.",
   "version": "1.2.0",
   "manifest_version": 3,
   "icons": {
     "48": "icons/pencil.png"
   },
   "action": {
-    "default_title": "isladiplo",
+    "default_title": "Isla Diplo",
     "default_icon": {
       "48": "icons/pencil.png"
     }
