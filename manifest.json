@@ -1,7 +1,7 @@
 {
   "name": "Isla Diplo",
   "description": "If you don't know what it is, you don't need it.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 3,
   "icons": {
     "48": "icons/pencil.png"
@@ -23,7 +23,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://service2.diplo.de/rktermin/extern/appointment_showForm.do*"
+        "https://service2.diplo.de/rktermin/extern/appointment_showForm.do*",
+        "https://service2.diplo.de/rktermin/extern/appointment_refreshCaptcha.do*"
       ],
       "js": [
         "libs/jquery-3.6.3.min.js",
@@ -37,7 +38,7 @@
         "data.json"
       ],
       "matches": [
-        "<all_urls>"
+        "https://service2.diplo.de/*"
       ]
     }
   ]
